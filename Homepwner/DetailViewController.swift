@@ -46,7 +46,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         nameField.text = item.name
         serialNumberField.text = item.serialNumber
         valueField.text = numberFormatter.string(from: NSNumber(value: item.valueInDollars))
-        dateLabel.text = dateFormatter.string(from: item.dateCreated)    
+        dateLabel.text = dateFormatter.string(from: item.dateCreated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -73,6 +73,14 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
     }
     
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "changeDate"?:
+            let dateViewController = segue.destination as! DateViewController
+            dateViewController.item = item
+        default:
+            preconditionFailure("Unexpected segue identifier")
+        }
+    }
     
 }
