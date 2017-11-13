@@ -16,6 +16,7 @@ class DateViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.title = "Date Created"
         datePicker.date = item.dateCreated
     }
     
