@@ -188,6 +188,12 @@
                                             <action selector="takePicture:" destination="VLc-0m-oJT" id="Q9H-6h-Og0"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="IeR-9f-phZ"/>
+                                    <barButtonItem systemItem="trash" id="eG5-oq-zdi">
+                                        <connections>
+                                            <action selector="clearPicture:" destination="VLc-0m-oJT" id="zQ0-yE-118"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
