@@ -26,6 +26,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate,
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
             imagePicker.sourceType = .camera
+            //imagePicker.cameraOverlayView = true
         } else {
             imagePicker.sourceType = .photoLibrary
         }

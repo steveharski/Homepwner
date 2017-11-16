@@ -34,7 +34,7 @@ class ItemsViewController: UITableViewController {
 
     
     
-    // -----------------------------------------------  Functions for configuring tableView ----------------------------------------- //
+    // MARK: - Functions for configuring tableView
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemStore.allItems.count + 1
     }
@@ -61,15 +61,15 @@ class ItemsViewController: UITableViewController {
             cell.valueLabel.text = "$\(item.valueInDollars)"
             
             if item.valueInDollars < 50 {
-                cell.backgroundColor = UIColor.init(red: 0, green: 0.5, blue: 0, alpha: 0.7)
+               // cell.backgroundColor = UIColor.init(red: 0, green: 0.5, blue: 0, alpha: 0.7)
             } else {
-                cell.backgroundColor = UIColor.init(red: 0.5, green: 0, blue: 0, alpha: 0.7)
+               // cell.backgroundColor = UIColor.init(red: 0.5, green: 0, blue: 0, alpha: 0.7)
             }
         }
         return cell
     }
     
-    // -----------------------------------------------  Functions for editing functionality --------------------------------------- //
+    // MARK: - Functions for editing functionality
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         // If the table view is asking to commit a delete command...
         if editingStyle == .delete {
@@ -110,7 +110,7 @@ class ItemsViewController: UITableViewController {
         }
     }
     
-    // -----------------------------------------------  Functions for moving functionality --------------------------------------- //
+    // MARK: - Functions for moving functionality
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         // Update the model
         itemStore.moveItem(from: sourceIndexPath.row, to: destinationIndexPath.row)
@@ -136,7 +136,7 @@ class ItemsViewController: UITableViewController {
     }
     
     
-    // ---------------------------------- Other fucntions
+    // MARK: - Other fucntions
     override func viewDidLoad() {
         super.viewDidLoad()
 
